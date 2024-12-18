@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google-Style Slider</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <style>
+        /* CSS untuk mengatur slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: none;  /* Menghapus batasan max-width */
+            margin: 0;  /* Menghapus margin */
+        }
+
+        .swiper-container {
+            width: 100%; /* Pastikan kontainer swiper penuh */
+        }
+
+        .swiper-slide {
+            width: 100% !important;  /* Pastikan slide mengambil lebar penuh */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide img, .responsive-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Agar gambar/video memenuhi seluruh area tanpa distorsi */
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            background: rgba(46, 125, 50, 0.8);
+            padding: 10px;
+            border-radius: 3px;
+        }
+
+        /* CSS untuk mengatur teks pada slide */
+        .swiper-slide h1,
+        .swiper-slide h2 {
+            color: white;
+            margin: 0;
+        }
+
+        /* CSS untuk tombol navigasi */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* CSS untuk indikator pagination */
+        .indicator {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator button {
+            width: 12px;
+            height: 12px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .indicator button.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="font-roboto bg-white">
+    <!-- Header -->
+    <header class="bg-green-700 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://storage.googleapis.com/a1aa/image/lveLj2uo97xLTK1uYVKxORzCoQ3q8P1XXrz9Vqzw8ueSQz2TA.jpg" alt="Company logo" class="h-12" width="150">
+                <nav class="ml-10 space-x-4">
+                    <a href="#" class="text-white hover:text-yellow-500">Home</a>
+                    <a href="#" class="text-white hover:text-yellow-500">About</a>
+                    <a href="#" class="text-white hover:text-yellow-500">Services</a>
+                    <a href="#" class="text-white hover:text-yellow-500">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slider Section -->
+    <section class="slider bg-green-700 text-white py-20">
+        <div class="swiper swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <!-- Video Full sebagai Background -->
+                    <video autoplay loop muted class="responsive-video">
+                        <source src="Saras Mulia 2.mp4" type="video/mp4">
+                    </video>
+                    <!-- Teks tanpa Padding dan ditengah -->
+                    <div class="overlay-text flex items-center justify-center h-full absolute inset-0 bg-black bg-opacity-50">
+                        <div class="text-center text-white">
+                            <h1 class="text-4xl font-bold mb-4">Welcome to Saras Mulia</h1>
+                            <h2 class="text-2xl mb-2">Golden Liquid from Nature</h2>
+                            <h3 class="text-lg mb-4">"Golden Liquid from Nature for Your Hair"</h3>
+                            <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide" style="background-color: #2e7d32;">
+                    <div class="grid grid-cols-2 gap-4 h-full">
+                        <!-- SDG 8: Pekerjaan Layak dan Pertumbuhan Ekonomi -->
+                        <div class="bg-red-700 text-white p-4 rounded-lg flex items-center justify-center h-full">
+                            <img src="asset/aset/sdgs8.png" alt="SDG 8" class="w-24 h-24 mr-4">
+                            <div>
+                                <h1 class="text-2xl font-bold">SDGs 8</h1>
+                                <p class="text-lg">Pekerjaan Layak dan Pertumbuhan Ekonomi</p>
+                            </div>
+                        </div>
+
+                        <!-- SDG 9: Infrastruktur, Industri, dan Inovasi -->
+                        <div class="bg-orange-600 text-white p-4 rounded-lg flex items-center justify-center h-full">
+                            <img src="asset/aset/sdgs9.png" alt="SDG 9" class="w-24 h-24 mr-4">
+                            <div>
+                                <h1 class="text-2xl font-bold">SDGs 9</h1>
+                                <p class="text-lg">Infrastruktur, Industri, dan Inovasi</p>
+                            </div>
+                        </div>
+
+                        <!-- SDG 12: Konsumsi dan Produksi yang Bertanggung Jawab -->
+                        <div class="bg-yellow-500 text-green-900 p-4 rounded-lg flex items-center justify-center h-full">
+                            <img src="asset/aset/sdgs12.png" alt="SDG 12" class="w-24 h-24 mr-4">
+                            <div>
+                                <h1 class="text-2xl font-bold">SDGs 12</h1>
+                                <p class="text-lg">Konsumsi dan Produksi yang Bertanggung Jawab</p>
+                            </div>
+                        </div>
+
+                        <!-- SDG 17: Kemitraan untuk Mencapai Tujuan -->
+                        <div class="bg-blue-800 text-white p-4 rounded-lg flex items-center justify-center h-full">
+                            <img src="asset/aset/sdgs17.png" alt="SDG 17" class="w-24 h-24 mr-4">
+                            <div>
+                                <h1 class="text-2xl font-bold">SDGs 17</h1>
+                                <p class="text-lg">Kemitraan untuk Mencapai Tujuan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <video autoplay loop muted class="responsive-video">
+                        <source src="Saras Mulia 2.mp4" type="video/mp4">
+                    </video>
+                    <div class="overlay-text">
+                        <h1 class="text-xl font-bold">Our Activity</h1>
+                        <h2 class="text-md mt-1">"Produce The Product"</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    <!-- Swiper.js Script -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Membuat slider responsif
+        function makeResponsive() {
+            const slides = document.querySelectorAll('.swiper-slide');
+            const videos = document.querySelectorAll('.responsive-video');
+
+            slides.forEach((slide) => {
+                const slideHeight = window.innerHeight * 0.8; // Slide menyesuaikan 80% tinggi layar
+                slide.style.height = `${slideHeight}px`;
+            });
+
+            videos.forEach((video) => {
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.objectFit = 'cover';
+            });
+        }
+
+        // Jalankan fungsi responsif saat halaman dimuat dan saat ukuran layar berubah
+        window.addEventListener('load', makeResponsive);
+        window.addEventListener('resize', makeResponsive);
+    </script>
+    </section>
+
+</body>
+</html>
+</section>
+<!-- Team Section -->
+<section class="bg-white py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Meet Our Team</h2>
+        <div class="scrolling-wrapper">
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Faizal Wiyadi, CEO of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_160042_1.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Faizal Wiyadi</h3>
+                <p>CEO of Saras Mulia</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/faizalwyd_/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Catur Hariyono, CTO of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/Catur Hariyono (Pendidikan Ekonomi) (Anggota).jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Catur Hariyono</h3>
+                <p>CTO of Saras Mulia</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/eunike.mita/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Shinta Maya Shafa, Head of Production" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161034.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Shinta Maya Shafa</h3>
+                <p>Head of Production</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/shintms_/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Widia Wulansari, Bendahara Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_160228.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Widia Wulansari</h3>
+                <p>Bendahara Saras Mulia</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/widwlsr_/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Silfiana, Secretary of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161632.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Silfiana</h3>
+                <p>Secretary of Saras Mulia</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/sil_466/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Dr. Eunike Rose Mita Lukiani, M.Pd., Mentor P2MW Tim Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161903.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Dr. Eunike Rose Mita Lukiani, M.Pd.</h3>
+                <p>Mentor P2MW Tim Saras Mulia</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/eunike.mita/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Basthoumi Muslih, M.M., DPL Program WMK UNP Kediri" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/DGhtd0IvhX5ZOBAiLtc1Kj7eN6ViWHyrJ2pweflIx9m1IntnA.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Basthoumi Muslih, M.M.</h3>
+                <p>DPL Program WMK UNP Kediri</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/basthoumi.m/">Instagram</a>
+                </p>
+            </div>
+            <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                <img alt="Photo of Bu Jasmin Widodo, Mentor WMK Universitas Ciputra" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/1yK9o6y9M0oTOpPdg0unIvUbQoeEeXwp3FdEoKJbNc4y4C3TA.jpg" width="100"/>
+                <h3 class="text-xl font-bold mb-2">Bu Jasmin Widodo</h3>
+                <p>Mentor WMK Universitas Ciputra</p>
+                <p class="mt-4">
+                    <a class="text-yellow-500 hover:text-yellow-300" href="https://www.instagram.com/bujasminw/">Instagram</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
+
+    <!-- Products Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant1.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Murni Non Bakar</h3>
+                    <p class="text-gray-200">Minyak Kemiri Murni non Bakar berwarna kuning keemasan.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant2.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Non Bakar Mixed</h3>
+                    <p class="text-gray-200">Minyak Kemir non Bakar yang dicampur dengan Vco dan Olive oil.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant3.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Bakar Murni</h3>
+                    <p class="text-gray-200">Minyak Kemir Bakar Murni yang bewarna gelap dan memiliki aroma khas.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant4.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Bakar Mixed</h3>
+                    <p class="text-gray-200">Minyak Kemir Bakar yang diberi campuran dengan Vco dan Olive oil.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant5.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Mixed Aromatic: Sweet Dream</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki perpaduan aroma bunga yang menghasilkan aroma yang manis.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant6.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">MMinyak Kemiri Mixed Aromatic: Teatree</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki aroma : TeaTree oil yang khas dengan dingin dan menyegarkan.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img src="asset/foto produk/variant7.jpg" alt="Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" width="200">
+                    <h3 class="text-xl font-bold mb-2 text-white">MMinyak Kemiri Mixed Aromatic: Mint</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki aroma : Mint yang dingin dan menyegarkan.</p>
+                    <a href="https://shopee.co.id/Minyak-Kemiri-Murni-100-Saras-Mulia-i.1062782164.28106442685" class="bg-yellow-500 text-green-700 px-4 py-2 mt-4 inline-block rounded-full font-bold hover:bg-yellow-400 transition">
+                        Beli di Shopee
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section style="background-color: #f8f8f8; padding: 50px;">
+        <h2 class="text-3xl font-bold text-center mb-12 text-green-700" style="font-family: Arial, sans-serif;">Product Ingredient and Benefit</h2>   
+        <div style="display: flex; align-items: flex-start; margin: 20px 0; padding: 10px;">
+          <img src="asset/foto anggota/IMG_20240611_161903.jpg" alt="Product Image 1" style="width: 40%; border-radius: 8px; margin-right: 20px; box-shadow: 0px 4px 6px rgba(0,0,0,0.1);">
+          <div style="width: 60%; color: #444; font-family: Arial, sans-serif; line-height: 1.6;">
+            <h3 style="color: #2e7d32; font-size: 1.5em; font-weight: bold;">Ingredient Product</h3>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+            </ul>
+            <h3 style="color: #2e7d32; font-size: 1.5em; font-weight: bold; margin-top: 20px;">Benefit Product</h3>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+              <li>a</li>
+              <li>b</li>
+              <li>c</li>
+            </ul>
+          </div>
+        </div>  
+    </section>
+    
+    </section>
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Saras Mulia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        
+        function moveSlide(direction) {
+            const totalSlides = slides.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const slideWidth = slides[0].clientWidth;
+            const offset = currentSlide * slideWidth;
+            document.querySelector(".slides").style.transform = `translateX(-${offset}px)`;
+        }
+    
+    </script>
+</body>
+</html>

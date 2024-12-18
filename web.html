@@ -1,0 +1,249 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Saras Mulia Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        .scrolling-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .scrolling-wrapper .card {
+            display: inline-block;
+            margin-right: 1rem;
+            width: 300px;
+        }
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="font-roboto bg-white">
+    <!-- Header -->
+    <header class="bg-green-700 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img alt="Company logo with a stylized 'Saras Mulia' text in bold, modern font" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/lveLj2uo97xLTK1uYVKxORzCoQ3q8P1XXrz9Vqzw8ueSQz2TA.jpg" width="150"/>
+                <nav class="ml-10 space-x-4">
+                    <a class="text-white hover:text-yellow-500" href="#">Home</a>
+                    <a class="text-white hover:text-yellow-500" href="#">About</a>
+                    <a class="text-white hover:text-yellow-500" href="#">Services</a>
+                    <a class="text-white hover:text-yellow-500" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="slider bg-green-700 text-white py-20">
+        <div class="slides">
+            <div class="slide">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold mb-4">Welcome to Saras Mulia</h1>
+                    <p class="text-lg mb-8">Your one-stop solution for all your business needs</p>
+                    <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Get Started</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold mb-4">Managing SDGs</h1>
+                    <p class="text-lg mb-8">We are committed to sustainable development goals (SDGs) to create a better future.</p>
+                    <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold mb-4">Our Activities</h1>
+                    <p class="text-lg mb-8">Get a glimpse of our activities and how we make an impact.</p>
+                    <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Explore</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold mb-4">Our Consumers</h1>
+                    <p class="text-lg mb-8">Join our community of satisfied consumers and experience the best.</p>
+                    <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Join Us</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl font-bold mb-4">Best Products, Best Deals</h1>
+                    <p class="text-lg mb-8">Discover our top-quality products at unbeatable prices.</p>
+                    <a class="bg-yellow-500 text-green-700 px-6 py-3 rounded-full font-bold" href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+    </section>
+    <!-- Scrolling Header Section -->
+    <section class="bg-white py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Meet Our Team</h2>
+            <div class="scrolling-wrapper">
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Faizal Wiyadi, CEO of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_160042_1.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Faizal Wiyadi</h3>
+                    <p>CEO of Saras Mulia</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Catur Hariyono, CTO of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/Catur Hariyono (Pendidikan Ekonomi) (Anggota).jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Catur Hariyono</h3>
+                    <p>CTO of Saras Mulia</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Shinta Maya Shafa, Head of Production" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161034.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Shinta Maya Shafa</h3>
+                    <p>Head of Production</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Widia Wulansari, Bendahara Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_160228.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Widia Wulansari</h3>
+                    <p>Bendahara Saras Mulia</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Silfiana, Secretary of Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161632.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Silfiana</h3>
+                    <p>Secretary of Saras Mulia</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Dr. Eunike Rose Mita Lukiani, M.Pd., Mentor P2MW Tim Saras Mulia" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="asset/foto anggota/IMG_20240611_161903.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Dr. Eunike Rose Mita Lukiani, M.Pd.</h3>
+                    <p>Mentor P2MW Tim Saras Mulia</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Basthoumi Muslih, M.M., DPL Program WMK UNP Kediri" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/DGhtd0IvhX5ZOBAiLtc1Kj7eN6ViWHyrJ2pweflIx9m1IntnA.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Basthoumi Muslih, M.M.</h3>
+                    <p>DPL Program WMK UNP Kediri</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+                <div class="card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img alt="Photo of Bu Jasmin Widodo, Mentor WMK Universitas Ciputra" class="w-24 h-24 rounded-full mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/1yK9o6y9M0oTOpPdg0unIvUbQoeEeXwp3FdEoKJbNc4y4C3TA.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Bu Jasmin Widodo</h3>
+                    <p>Mentor WMK Universitas Ciputra</p>
+                    <p class="mt-4">
+                        <a class="text-yellow-500 hover:text-yellow-300" href="#">Instagram</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Products Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" height="200" src="asset/foto produk/variant1.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Murni Non Bakar</h3>
+                    <p class="text-gray-200">Minyak Kemiri Murni non Bakar</p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Mixed (Vco & Olive Oil)" class="mx-auto mb-4" height="200" src="asset/foto produk/variant2.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Mixed (Vco & Olive Oil)</h3>
+                    <p class="text-gray-200">Minyak Kemiri non Bakar yang dicampur dengan Vco(Virgin Coconut Oil) dan Olive Oil</p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Bakar Murni" class="mx-auto mb-4" height="200" src="asset/foto produk/variant3.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Bakar Murni</h3>
+                    <p class="text-gray-200">Minyak Kemiri Bakar Murni.</p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Bakar Mixed (Vco & Olive Oil)" class="mx-auto mb-4" height="200" src="asset/foto produk/variant4.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Bakar Mixed (Vco & Olive Oil)</h3>
+                    <p class="text-gray-200">Minyak Kemiri non Bakar yang dicampur dengan Vco(Virgin Coconut Oil) dan Olive Oil.</p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Mixed Aromatic: Sweet Dream" class="mx-auto mb-4" height="200" src="asset/foto produk/variant7.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Mixed Aromatic: Sweet Dream</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki perpaduan aroma: bunga yang menghasilkan aroma yang manis. </p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Mixed Aromatic: Treatree" class="mx-auto mb-4" height="200" src="asset/foto produk/variant6.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Mixed Aromatic: Treatree</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki aroma : Tea Tree oil yang dingin dan menyegarkan.</p>
+                </div>
+                <div class="bg-green-700 p-6 rounded-lg shadow-md text-center">
+                    <img alt="Bottle of Minyak Kemiri Mixed Aromatic: Relaxing Mint" class="mx-auto mb-4" height="200" src="asset/foto produk/variant5.jpg" width="200"/>
+                    <h3 class="text-xl font-bold mb-2 text-white">Minyak Kemiri Mixed Aromatic: Relaxing Mint</h3>
+                    <p class="text-gray-200">Minyak Kemiri Mixed yang memiliki aroma: Daun Peppermint yang dingin dan menenangkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ingredients and Benefits Section for Each Product -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Ingredients and Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide">
+                                <img alt="Bottle of Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" height="200" src="asset/foto produk/variant1.jpg" width="200"/>
+                            </div>
+                            <div class="slide">
+                                <img alt="Ingredients of Minyak Kemiri Murni Non Bakar" class="mx-auto mb-4" height="200" src="https://storage.googleapis.com/a1aa/image/G8itppecpqSPGCA1dZIm5a2Ssr28e5WM794rqDdNOVOFGJ3TA.jpg" width="200"/>
+                            </div>
+                        </div>
+                        <button class="prev" onclick="moveSlide(-1)">❮</button>
+                        <button class="next" onclick="moveSlide(1)">❯</button>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-green-700">Minyak Kemiri Murni Non Bakar</h3>
+                    <p class="text-gray-700">Ingredients: Kemiri (Candlenut)</p>
+                    <p class="text-gray-700">Benefits: Promotes hair growth, strengthens hair roots</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide">
+                                <img alt="Bottle of Minyak Kemiri Mixed (Vco & Olive Oil)" class="mx-auto mb-4" height="200" src="asset/foto produk/variant2.jpg" width="200"/>
+                            </div>
+                           

@@ -1,0 +1,306 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Saras Mulia Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        .scrolling-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .scrolling-wrapper .card {
+            display: inline-block;
+            margin-right: 1rem;
+            width: 300px;
+        }
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="font-roboto bg-white">
+    <!-- Header -->
+    <header class="bg-green-700 shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img alt="Company logo with a stylized 'Saras Mulia' text in bold, modern font" class="h-12" height="50" src="https://storage.googleapis.com/a1aa/image/lveLj2uo97xLTK1uYVKxORzCoQ3q8P1XXrz9Vqzw8ueSQz2TA.jpg" width="150"/>
+                <nav class="ml-10 space-x-4">
+                    <a class="text-white hover:text-yellow-500" href="#">Home</a>
+                    <a class="text-white hover:text-yellow-500" href="#">About</a>
+                    <a class="text-white hover:text-yellow-500" href="#">Services</a>
+                    <a class="text-white hover:text-yellow-500" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+<!-- Scrolling Header Section -->
+<section class="bg-white py-10">
+    <div
+    
+        >
+        <div
+        style="
+            display: flex;
+            align-items: flex-start; 
+            background: linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(46, 125, 50, 0.3));
+            padding: 20px;
+            border-radius: 8px;
+        "
+        >
+        <!-- Bagian Gambar -->
+        <img
+            src="asset/foto produk/model4.jpg"
+            alt="Product Image 1"
+            style="
+            width: 40%;
+            border-radius: 8px;
+            margin-right: 20px; /* Jarak antara gambar dan teks */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            "
+        />
+
+        <!-- Bagian Teks -->
+        <div
+            style="
+            width: 50%;
+            margin-left: 50px; 
+            color: #444;
+            font-family: Arial, sans-serif;
+            line-height: 2;
+            "
+        >
+            <h3 style="color: #2e7d32; font-size: 1.5em; font-weight: bold">
+            Minyak Kemiri Bakar Mixed
+            </h3>
+            <h3 style="color: #2e7d32; font-size: 1.2em; font-weight: bold">
+            Ingredient Product
+            </h3>
+            <ul style="list-style-type: disc; padding-left: 20px">
+            <li>Minyak Kemiri Bakar </li>
+            <li>Virgin Coconut Oil</li>
+            <li>Olive Oil (minyak zaitun)</li>
+            </ul>
+            <h3
+            style="
+                color: #2e7d32;
+                font-size: 1.2em;
+                font-weight: bold;
+                margin-top: 20px;
+            "
+            >
+            Benefit Product
+            </h3>
+            <ul style="list-style-type: disc; padding-left: 20px">
+            <li>Melembapkan rambut yang kering akibat paparan AC atau panas matahari.</li>
+            <li>Membantu menjaga rambut tetap hitam dan berkilau.</li>
+            <li>Kaya akan nutrisi dari VCO dan zaitun untuk rambut sehat dan kuat.</li>
+            <li>Cocok untuk pria maupun wanita dengan gaya hidup aktif.</li>
+            </ul>
+        </div>
+        </div>
+        <div
+            style="
+                display: flex;
+                align-items: flex-start; /* Membuat teks sejajar dengan bagian atas gambar */
+                background: linear-gradient(to right, rgba(46, 125, 50, 0.3), rgba(255, 215, 0, 0.3));
+                padding: 20px;
+                border-radius: 8px;
+                flex-direction: row-reverse; /* Membalik posisi gambar dan teks */
+            "
+            >
+            <!-- Bagian Gambar -->
+            <img
+                src="asset/foto produk/model4.jpg"
+                alt="Product Image 1"
+                style="
+                width: 40%;
+                border-radius: 8px;
+                margin-left: 20px; /* Jarak antara gambar dan teks */
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                "
+            />
+
+            <!-- Bagian Teks -->
+            <div
+                style="
+                width: 60%;
+                color: #444;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                "
+            >
+                <h3 style="color: #2e7d32; font-size: 1.5em; font-weight: bold">
+                Minyak Kemiri Bakar Mixed
+                </h3>
+                <h3 style="color: #2e7d32; font-size: 1.2em; font-weight: bold">
+                Ingredient Product
+                </h3>
+                <ul style="list-style-type: disc; padding-left: 20px">
+                <li>Minyak Kemiri Bakar </li>
+                <li>Virgin Coconut Oil</li>
+                <li>Olive Oil (minyak zaitun)</li>
+                </ul>
+                <h3
+                style="
+                    color: #2e7d32;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin-top: 20px;
+                "
+                >
+                Benefit Product
+                </h3>
+                <ul style="list-style-type: disc; padding-left: 20px">
+                <li>Melembapkan rambut yang kering akibat paparan AC atau panas matahari.</li>
+                <li>Membantu menjaga rambut tetap hitam dan berkilau.</li>
+                <li>Kaya akan nutrisi dari VCO dan zaitun untuk rambut sehat dan kuat.</li>
+                <li>Cocok untuk pria maupun wanita dengan gaya hidup aktif.</li>
+                </ul>
+            </div>
+        </div>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Our Services and Consumers</title>
+          <!-- Swiper.js CSS -->
+          <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+          <style>
+            .swiper-container {
+              width: 100%;
+              padding-top: 20px;
+              padding-bottom: 40px;
+            }
+            .swiper-slide {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+            }
+          </style>
+        </head>
+        <body>
+          <!-- Section: Our Services -->
+          <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                  <img src="https://via.placeholder.com/100" alt="Free Konsul" class="mx-auto mb-4">
+                  <h3 class="text-xl font-bold mb-2">Free Konsul</h3>
+                  <p>Melalui layanan online atau langsung.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                  <img src="https://via.placeholder.com/100" alt="Free Tester" class="mx-auto mb-4">
+                  <h3 class="text-xl font-bold mb-2">Free Tester</h3>
+                  <p>Gratis tester ketika berada di tempat.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                  <img src="https://via.placeholder.com/100" alt="Melayani Pelanggan" class="mx-auto mb-4">
+                  <h3 class="text-xl font-bold mb-2">Melayani</h3>
+                  <p>Pelayanan ramah untuk semua kebutuhan Anda.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                  <img src="https://via.placeholder.com/100" alt="Custom Requests" class="mx-auto mb-4">
+                  <h3 class="text-xl font-bold mb-2">Custom Requests</h3>
+                  <p>Menyesuaikan permintaan pelanggan.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+          <!-- Section: Our Consumers -->
+          <section class="bg-white py-12">
+            <div class="container mx-auto px-4">
+              <h2 class="text-3xl font-bold text-center mb-12 text-green-700">Our Consumers</h2>
+              <div class="swiper swiper-container">
+                <div class="swiper-wrapper">
+                  <!-- Consumer 1 -->
+                  <div class="swiper-slide card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img src="consumer1.jpg" alt="Consumer 1" class="w-24 h-24 rounded-full mx-auto mb-4" style="height: 100px; width: 100px;">
+                    <h3 class="text-xl font-bold mb-2">John Doe</h3>
+                    <p>"Amazing experience!"</p>
+                  </div>
+                  <!-- Consumer 2 -->
+                  <div class="swiper-slide card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img src="consumer2.jpg" alt="Consumer 2" class="w-24 h-24 rounded-full mx-auto mb-4" style="height: 100px; width: 100px;">
+                    <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
+                    <p>"Loved the free tester!"</p>
+                  </div>
+                  <!-- Consumer 3 -->
+                  <div class="swiper-slide card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img src="consumer3.jpg" alt="Consumer 3" class="w-24 h-24 rounded-full mx-auto mb-4" style="height: 100px; width: 100px;">
+                    <h3 class="text-xl font-bold mb-2">Michael Brown</h3>
+                    <p>"Highly recommend!"</p>
+                  </div>
+                  <div class="swiper-slide card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img src="consumer1.jpg" alt="Consumer 1" class="w-24 h-24 rounded-full mx-auto mb-4" style="height: 100px; width: 100px;">
+                    <h3 class="text-xl font-bold mb-2">John Doe</h3>
+                    <p>"Amazing experience!"</p>
+                  </div>
+                  <div class="swiper-slide card bg-green-700 text-white p-6 rounded-lg shadow-md">
+                    <img src="consumer1.jpg" alt="Consumer 1" class="w-24 h-24 rounded-full mx-auto mb-4" style="height: 100px; width: 100px;">
+                    <h3 class="text-xl font-bold mb-2">John Doe</h3>
+                    <p>"Amazing experience!"</p>
+                  </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-4"></div>
+              </div>
+            </div>
+          </section>
+        
+          <!-- Swiper.js Script -->
+          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+          <script>
+            const swiper = new Swiper(".swiper-container", {
+              slidesPerView: 3,
+              spaceBetween: 20,
+              speed: 400,
+              loop: true,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+            });
+          </script>
+        </body>
+        </html>
+        
